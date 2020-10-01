@@ -1,1 +1,1 @@
-# shopcase
+# The shop case
