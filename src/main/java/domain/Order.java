@@ -2,6 +2,7 @@ package domain;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.UUID;
 
 public class Order {
     private String orderId;
@@ -11,12 +12,12 @@ public class Order {
     private double discount;
     private boolean bicycleReward;
 
-    public Order(String customerId, String orderId, List<OrderLine> lines) {
+    public Order(String customerId, List<OrderLine> lines) {
         this.customerId = customerId;
         this.lines = lines;
         this.sum = 0.0;
         this.discount = 0.0;
-        this.orderId = orderId;
+        this.orderId = UUID.randomUUID().toString();
         this.bicycleReward = false;
     }
 

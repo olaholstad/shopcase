@@ -23,8 +23,8 @@ public class PlaceOrder implements Route {
         Gson gson = new Gson();
         if (request.body() != null) {
             Order order = gson.fromJson(request.body(), Order.class);
-            if (order != null && order.getCustomerId() != null && order.getOrderId() != null) {
-                Order updatedOrder = calculator.setOrderSumAndDiscount(order);
+            if (order != null && order.getCustomerId() != null) {
+                Order updatedOrder = calculator.setOrderSumAndDiscount(setOrderId(order));
                 orderStorage.addOrder(updatedOrder);
                 response.status(200);
                 return gson.toJson(updatedOrder, Order.class);
@@ -32,5 +32,9 @@ public class PlaceOrder implements Route {
         }
         response.status(400);
         return "Failed to add order";
+    }
+
+    private Order setOrderId(Order order) {
+        return new Order(order.getCustomerId(), order.getLines());
     }
 }

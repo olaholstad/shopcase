@@ -1,14 +1,15 @@
 package domain;
 
 import java.util.Objects;
+import java.util.UUID;
 
 public class Customer {
     private String id;
     private String name;
     private CustomerType type;
 
-    public Customer(String id, String name, CustomerType type) {
-        this.id = id;
+    public Customer(String name, CustomerType type) {
+        this.id = UUID.randomUUID().toString();
         this.name = name;
         this.type = type;
     }

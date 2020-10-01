@@ -15,31 +15,31 @@ public class TestHelper {
         List<OrderLine> orderLines = new ArrayList<>();
         orderLines.add(getOrderLinePaper());
         orderLines.add(getOrderLinePen());
-        return new Order(customerId, ORDER_ID, orderLines);
+        return new Order(customerId, orderLines);
     }
 
     public static Order getPadOrder(String customerId){
         List<OrderLine> orderLines = new ArrayList<>();
         orderLines.add(getOrderLinePad());
-        return new Order(customerId, ORDER_ID, orderLines);
+        return new Order(customerId, orderLines);
     }
 
     public static Order getLargeOrder(String customerId){
         List<OrderLine> orderLines = new ArrayList<>();
         orderLines.add(getLargeLine());
-        return new Order(customerId, ORDER_ID, orderLines);
+        return new Order(customerId, orderLines);
     }
 
     public static Customer getRegularCustomer(){
-        return new Customer(CUSTOMER_ID_1, "Steve", CustomerType.REGULAR);
+        return new Customer("Steve", CustomerType.REGULAR);
     }
 
     public static Customer getLargeCustomer(){
-        return new Customer(CUSTOMER_ID_2, "Matt", CustomerType.LARGE);
+        return new Customer("Matt", CustomerType.LARGE);
     }
 
     public static Customer getPrivateCustomer(){
-        return new Customer(CUSTOMER_ID_3, "Bob", CustomerType.PRIVATE);
+        return new Customer("Bob", CustomerType.PRIVATE);
     }
 
     private static OrderLine getOrderLinePen(){
