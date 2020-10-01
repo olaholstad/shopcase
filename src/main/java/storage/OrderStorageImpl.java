@@ -27,7 +27,6 @@ public class OrderStorageImpl implements OrderStorage {
             logger.debug("Added order {}", order.toString());
         }
         logger.debug("Something went wrong while adding order");
-
     }
 
     @Override
@@ -47,6 +46,5 @@ public class OrderStorageImpl implements OrderStorage {
             logger.debug("Updated order {}", order.toString());
         }
         logger.debug("Something went wrong while updating order");
-
     }
 }

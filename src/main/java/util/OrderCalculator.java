@@ -17,14 +17,16 @@ public class OrderCalculator {
         double totalDiscount = 0.0;
 
         ArrayList<OrderLine> updatedLines = new ArrayList<>();
+        //Fetching costumer
         Customer customer = customerStorage.getCustomer(order.getCustomerId());
+        //iterating all order lines
         for (OrderLine line : order.getLines()) {
             //Setting sum and discount for large customers
             if (isExtraDiscountApplicable(customer.getType(), line.getProduct().getType())) {
                 double sum = line.getProduct().getPrice() * line.getAmount();
                 double lineSum = sum * getDiscount(customer) * 0.8;
                 double lineDiscount = sum - lineSum;
-
+                //Setting line sum + discount and updating total sum + discount
                 totalSum = totalSum + lineSum;
                 totalDiscount = totalDiscount + lineDiscount;
                 updatedLines.add(getUpdatedLine(line, lineSum, lineDiscount));
@@ -33,7 +35,7 @@ public class OrderCalculator {
                 double sum = line.getProduct().getPrice() * line.getAmount();
                 double lineSum = sum * getDiscount(customer);
                 double lineDiscount = sum - lineSum;
-
+                //Setting line sum + discount and updating total sum + discount
                 totalSum = totalSum + lineSum;
                 totalDiscount = totalDiscount + lineDiscount;
                 updatedLines.add(getUpdatedLine(line, lineSum, lineDiscount));

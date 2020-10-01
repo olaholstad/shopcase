@@ -93,17 +93,3 @@ public class Order {
                 '}';
     }
 }
-
-
-/*
-*
-Koppling till kund
-• Orderrad (en eller flera) med:
-• Artikel (penna, block, papper eller suddgummi)
-• Antal artiklar
-• Pris per artikel
-• Total summa för orderrad
-• Total rabatt för orderrad
-• Total summa
-• Total rabatt
-* */
