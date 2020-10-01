@@ -1,0 +1,16 @@
+.DS_Store
+.idea/
+*.iml
+target
+.classpath
+.project
+.recommenders
+.settings
+.metadata
+dependency-reduced-pom.xml
+/doc/*.pdf
+/doc/*.png
+rebuild.bat
+*reassign.json
+*reassignment.json
+~$*.doc
